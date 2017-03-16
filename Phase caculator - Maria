@@ -2,11 +2,13 @@ import math
 
 A=raw_input("Amplitute: ")  ##We need to make sure that the amplitute is a number.
 A_digit = A.replace('.','')
-if A_digit.isdigit(): 
+A_digit_neg = A.replace('-','') ##Checks to see if number is negative.
+if A_digit.isdigit() or A_digit_neg.isdigit(): 
     A=float(A)
     o=raw_input("Angular Velocity: ")   ##We need to make sure that the angular velocity is a number.
     o_digit = o.replace('.','')
-    if o_digit.isdigit():
+    o_digit_neg = o.replace('-','')  ##Checks to see if number is negative.
+    if o_digit.isdigit() or o_digit_neg.isdigit():
         o=float(o)
         ti=raw_input("Time: ")  ##We need to make sure that time is a number.
         ti_digit = ti.replace('.','')
@@ -14,7 +16,8 @@ if A_digit.isdigit():
             ti=float(ti)
             p=raw_input("Phase: ")  ##We need to make sure that phase is a number.
             p_digit = p.replace('.','')
-            if p_digit.isdigit():
+            p_digit_neg = p.replace('-','')  ##Checks to see if number is negative.
+            if p_digit.isdigit() or p_digit_neg.isdigit():
                 p=float(p)
                 y=A*math.sin(math.radians(o*ti+p))
                 print "YOUR INPUTS WERE: "
