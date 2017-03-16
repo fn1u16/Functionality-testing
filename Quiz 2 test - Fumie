@@ -26,9 +26,11 @@ while answer_2 != "a":
         print "Correct. Go to the next page ans check your achievement."
     elif answer_2 == "hint2":
         print "T = 2pi/omega = 2pi(L/omega)**1/2)"
-    else:
+    elif answer_2 == 'b' or answer_2 == 'c' or answer_2 == 'd':
         print  "It's wrong. Try it again."
         print  "if you want to check the hint, enter 'hint2'. "
+    else:
+        print "Invalid input: please select from multiple choice"
 
 # user's answer is saved to the dialog "answer.py"    
 answer_save()
