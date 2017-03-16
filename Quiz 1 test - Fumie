@@ -14,9 +14,8 @@ while answer_1 != 2.51 :
     answer_1 = raw_input("Enter your answer : ").lower()
     answer_set("user_answer_1", answer_1)
 
-# replaces '.' in returned string with nothing
-    ans_1_digit = answer_1.replace('.','').isdigit()
-    print ans_1_digit
+# replaces '.' and '-' in returned string with nothing
+    ans_1_digit = answer_1.replace('.','').replace('-','').isdigit()
 
 #checks to see if user input is a digit if. Then runs procedures dependant on if input is a digit or not
     if ans_1_digit == False:
