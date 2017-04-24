@@ -1,0 +1,48 @@
+#Quiz 2
+#import answer.py
+from answer import *
+answer_init()
+answer_load()
+
+
+#the question sentense 2 is shown up
+print "A body ocscillates with a frequency of 2Hz. What is its acceleration in m/s^2?"
+
+# User enters the answer
+answer_2 = 0
+while answer_2 != 31.6 :
+    answer_2 = raw_input("Enter your answer : +- ").lower()
+    answer_set("user_answer_2", answer_2)
+
+# replaces '.' in returned string with nothing
+    ans_2_digit = answer_2.replace('.','').isdigit()
+    print ans_2_digit
+
+#checks to see if user input is a digit if. Then runs procedures dependant on if input is a digit or not
+    if ans_2_digit == False:
+        if answer_2 == "hint2":
+            hint_2 = "Acceleration = A*omega^2"
+            print hint_2
+        else:
+            print "Invalid answer. please input number"
+        
+    elif ans_2_digit == True:
+        answer_2 = float(answer_2)
+
+        if answer_2 != 31.6:
+            print "It's wrong answer. Try again."
+            Hint_2 = raw_input(" Would you like the hint? (y/n)").lower()
+            if Hint_2 == "y":
+                hint_2 = "Acceleration = A*omega^2"
+                print hint_2
+            elif Hint_2 != "y" and Hint_2 != "n":
+                print "Please type y or n"
+                Hint_2 = raw_input(" Would you like the hint? y/n)").lower()
+                
+        if answer_2 == 31.6:
+            print "Your answer is", answer_2, "m/s^2" 
+            print "Correct. Go to the question 3"
+
+    
+# user's answer is saved to the dialog "answer.py"    
+answer_save()
