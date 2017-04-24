@@ -1,0 +1,34 @@
+#Quiz 4
+#import answer.py 
+from answer import *
+answer_init()
+
+answer_load()
+
+#The question sentence2 and alternatives are shown up.
+print "If the mass of a simple pendulum is doubled, its period of oscillation:"
+print "Choose ansewer from a, b, c, d"
+print  "a = increases"
+print  "b = decreases"
+print  "c = stays the same"
+print  "d = doubles"
+    
+#set the answer_4
+answer_4= 0
+
+#User enters the answer
+while answer_4 != "c":
+    answer_4 = raw_input("Enter your answer : ").lower()
+    answer_set("user_answer_4", answer_4)
+
+#The answer is checked
+    if answer_4 == "c":
+        print "Correct. Go to the question 5."
+    elif answer_4 == "hint4":
+        print "T = 1/f = 2pi/omega = 2pi(L/omega)**1/2)"
+    else:
+        print  "It's wrong. Try it again."
+        print  "if you want to check the hint, enter 'hint4'. "
+
+# user's answer is saved to the dialog "answer.py"    
+answer_save()
