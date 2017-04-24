@@ -1,0 +1,47 @@
+# Quiz 5
+from answer import *
+answer_init()
+answer_load()
+
+# The question sentence 5
+print "A mass of 3 kg rests on a smooth horizontal surface, as shown in the below figure. If the stiffness of each spring is  1kN/m, determine the frequency of vibration of the mass."
+print "It may be assumed that, initially, the springs are un-stretched."
+
+# User enters the answer
+answer_5 = 0
+while answer_5 != 4.11:
+    answer_5 = raw_input("Enter your answer : ").lower()
+    answer_set("user_answer_5", answer_5)
+
+# Replace '.' in returned string with nothing
+    ans_5_digit = answer_5.replace('.', '').isdigit()
+    print ans_5_digit
+
+# Check to see if  user input is a digit if. Then, runs procedures dependant on if
+    if ans_5_digit == False:
+        if answer_5 == "hint5":
+            hint_5 = " omega = (k/m)^(1/2), but there are TWO springs. Also, omega = 2*pi*f"
+            print hint_5
+        else:
+            print "Invalid answer. Please input number."
+
+    elif ans_5_digit == True:
+        answer_5 = float(answer_5)
+
+        if answer_5 != 4.11:
+            print "It's wrong answer. Try again."
+            Hint_5 = raw_input("Would you like the hint? (y/n)").lower()
+
+            if Hint_5 == "y":
+                hint_5 = "omega = (k/m)^(1/2), and there are TWO springs. Also, omega = 2*pi*f"
+                print hint_5
+            elif Hint_5 != "y" and Hint_5 != "n":
+                print "Please type y or n"
+                Hint_5 = raw_input("Would you like the hint? (y/n)").lower()
+
+        if answer_5 == 4.11:
+            print "Your answer is ", answer_5, "Hz"
+            print "Correct. Go to the next page and check your score."
+
+# User's answer is saved  to the dialog "answer.py"
+answer_save()
