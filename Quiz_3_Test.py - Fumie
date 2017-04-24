@@ -1,0 +1,33 @@
+#import answer.py 
+from answer import *
+answer_init()
+
+answer_load()
+
+#The question sentence 3 and alternatives are shown up.
+print "Determine the period of oscillation of a simple pendulum of length 9.81m,given g = 9.81m/s^2"
+print "Choose answer from a, b, c, d"
+print  "a = 6.28Hz"
+print  "b = 0.455Hz"
+print  "c = 17.96Hz"
+print  "d = 0.056Hz"
+    
+#set the answer_3
+answer_3 = 0
+
+#User enters the answer
+while answer_3 != "a":
+    answer_3 = raw_input("Enter your answer : ").lower()
+    answer_set("user_answer_3", answer_3)
+
+#The answer is checked
+    if answer_3 == "a":
+        print "Correct. Go to the question 4."
+    elif answer_3 == "hint3":
+        print "T = 2pi/omega = 2pi(L/omega)**1/2)"
+    else:
+        print  "It's wrong. Try it again."
+        print  "if you want to check the hint, enter 'hint3'. "
+
+# user's answer is saved to the dialog "answer.py"    
+answer_save()
